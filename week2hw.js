@@ -10,8 +10,6 @@ var addresses = ''; // addresses held
 
 // locate the addresses in html 
 const table = $('tbody').find('td').has('h4'); 
-//const table = $('tbody'); 
-//const table2 = $(table.find('td').has('h4'));
 
 // function to remove extra content and convert to text 
 
@@ -22,7 +20,7 @@ table.each(function(i, elem) {
     $('div').remove()
     $('br').remove()
     $('a').remove()
-    $('#GetDirection').remove()
+    $('#GetDirection')
     $('img').remove()
     $('span').remove()
    
@@ -34,4 +32,4 @@ table.each(function(i, elem) {
 });
 
 // write to file 
-fs.writeFileSync('/home/ec2-user/environment/data/addresses.csv', addresses);
+//fs.writeFileSync('/home/ec2-user/environment/data/addresses.csv', addresses);
