@@ -20,7 +20,7 @@ table.each(function(i, elem) {
     $('div').remove()
     $('br').remove()
     $('a').remove()
-    $('#GetDirection')
+    $('#GetDirection').remove()
     $('img').remove()
     $('span').remove()
    
