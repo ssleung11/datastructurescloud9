@@ -8,9 +8,12 @@ var $ = cheerio.load(content);
 
 var addresses = ''; // addresses held 
 
+// locate the addresses in html 
 const table = $('tbody').find('td').has('h4'); 
 //const table = $('tbody'); 
 //const table2 = $(table.find('td').has('h4'));
+
+// function to remove extra content and convert to text 
 
 table.each(function(i, elem) {
   
@@ -23,10 +26,12 @@ table.each(function(i, elem) {
     $('img').remove()
     $('span').remove()
    
+   //converts to text and uses regular expressions to get rid of spaces 
     const item = addresses +=  ($(elem).first().text().replace(/\s\s+/g, '')) + '\n';
     //const item2 = item.split("Wheelchair");
-    
+   
     console.log(item);
 });
 
+// write to file 
 fs.writeFileSync('/home/ec2-user/environment/data/addresses.csv', addresses);
